@@ -1,0 +1,19 @@
+{
+  "name": "wearpp-online-store",
+  "version": "1.0.0",
+  "description": "https://coolors.co/080708-3772ff-df2935-fdca40-e6e8e6\r 080708\r 3772FF\r DF2935\r FDCA40\r E6E8E6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bggth/wearpp-online-store.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bggth/wearpp-online-store/issues"
+  },
+  "homepage": "https://github.com/bggth/wearpp-online-store#readme"
+}
