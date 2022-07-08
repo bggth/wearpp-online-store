@@ -12,7 +12,7 @@ class Model {
         for (let i: number = 0; i < count; i++) {
             let product: Product = new Product();
             product.id = i;
-            product.color = ['black', 'white', 'red', 'green', 'blue'][Utils.randomNumber(5)];
+            product.color = ['black', 'white', 'gray', 'green', 'blue', 'brown', 'violet'][Utils.randomNumber(5)];
             product.count = 10+ Utils.randomNumber(10)*10;
             product.description = Utils.randomWords(50, 3);
             product.manufacturer = Utils.randomWord(7) + ' inc.';

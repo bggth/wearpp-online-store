@@ -20,7 +20,8 @@ class Controller {
                         if (ids[0]==='tab'){
                             this.view.slider.catalogView.productListView.update(this.model.request(''));
                             this.view.setView(Number(ids[1]));
-                            
+                            this.view.slider.catalogView.colapse(ids[1] != '1');
+
                             return;
                         } else {
                             if ((ids[0]==='button') && (ids[1]==='search')) {

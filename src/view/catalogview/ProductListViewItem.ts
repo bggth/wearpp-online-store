@@ -12,8 +12,9 @@ class ProductListViewItem {
 
         return `
         <div class="product__lvi item-${this.product.id}">
-            <img class="product__lvi-img no-click" src="./assets/products/${this.product.imageUrl}.jpg"></img>
+            <img class="product__lvi-img no-click" src="./assets/products/colors/${this.product.color}-0.jpg"></img>
             <div class="product__lvi-title no-click">${this.product.title}<sup>${this.product.releaseDate}</sup></div>
+            <div class="product__lvi-subtitle no-click">${this.product.color} | ${this.product.manufacturer} | ${this.product.count}</div>
             <div class="product__lvi-price no-click">${this.product.price} rub</div>
             <span class="product__lvi-add add-${this.product.id} button underline noselect">add</span>
         </div>
