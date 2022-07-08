@@ -1,3 +1,5 @@
+import './global.css';  
+
 import {Controller} from '../controller/Controller';
 import {Header} from "./Header";
 import {Footer} from "./Footer";
@@ -9,14 +11,19 @@ class View {
     footer: Footer;
     //menu: Menu;
     slider: Slider;
-    document: Document;
+    //document: Document;
     appElement: HTMLElement;
+    sliderElement: HTMLElement;
 
     constructor() {
         this.header = new Header();
         this.footer = new Footer();
         this.slider = new Slider();
-        this.appElement = document.getElementById('body') as HTMLElement
+        this.appElement = document.querySelector('body') as HTMLElement;
+
+    }
+
+    init() {
     }
 
     setController(controller: Controller) {
@@ -34,7 +41,9 @@ class View {
     }
 
     setView(page: number) {
-
+        if (this.sliderElement==null)
+            this.sliderElement = document.querySelector('.slider-inner') as HTMLElement;            
+        this.sliderElement.style.left = -page*100+'%';
     }
 }
 

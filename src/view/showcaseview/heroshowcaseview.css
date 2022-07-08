@@ -1,0 +1,23 @@
+.heroshowcaseview{
+    background: url(/assets/shop.jpg);
+    background-size: cover;
+    min-height: 75vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.heroshowcaseview__header{
+    margin: 0 auto;
+    display:inline;
+    padding: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 96px;
+    background-color: #3772FF;
+}
+
+.heroshowcaseview__header:hover {
+    cursor: pointer;
+    background-color: #DF2935;
+    color: #E6E8E6;
+}

@@ -1,7 +1,7 @@
 class Footer {
     render() {
         return `
-            <footer class="footer">footer</footer>
+            <footer class="footer">footer lol22</footer>
         `
     }
 }
