@@ -51,7 +51,7 @@ class Controller {
 
     navigate(url: string) {
         this.view.render();
-        this.view.setView(1);
+        this.view.setView(2);
         this.view.slider.catalogView.productListView.update(this.model.request(''));
     }
 
