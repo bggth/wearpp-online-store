@@ -1,4 +1,5 @@
 import { Model } from '../model/Model';
+import { Product } from '../model/Product';
 import {View} from '../view/View';
 
 class Controller {
@@ -29,9 +30,14 @@ class Controller {
                             } else if ((ids[0]==='button') && (ids[1]==='price')) {
                                 this.view.slider.catalogView.filterView.switch(1);
                                 this.view.slider.catalogView.productListView.update(this.model.request('1'));
-                            } else if ((ids[0]==='button') && (ids[1]==='release')) {
+                            } else if (ids[0]==='button') {
                                 this.view.slider.catalogView.filterView.switch(2);
                                 this.view.slider.catalogView.productListView.update(this.model.request('2'));
+                            } else if (ids[0]==='add') {
+                                let product: Product = JSON.parse(this.model.findProductById(Number(ids[1])));
+                                console.log(product);
+                                if (product != null)
+                                    this.view.slider.cartView.addProduct(product, 1);
                             }
                         }
                             
@@ -51,7 +57,27 @@ class Controller {
 
     navigate(url: string) {
         this.view.render();
-        this.view.setView(2);
+        this.view.init();
+        this.view.setView(1);
+
+        let product: Product = JSON.parse(this.model.findProductById(Number(1)));
+        console.log(product);
+        if (product != null)
+            this.view.slider.cartView.addProduct(product, 1);
+        product = JSON.parse(this.model.findProductById(Number(22)));
+        console.log(product);
+        if (product != null)
+        this.view.slider.cartView.addProduct(product, 1);
+        product = JSON.parse(this.model.findProductById(Number(33)));
+        console.log(product);
+        if (product != null)
+            this.view.slider.cartView.addProduct(product, 1);
+        product = JSON.parse(this.model.findProductById(Number(14)));
+        console.log(product);
+        if (product != null)
+            this.view.slider.cartView.addProduct(product, 1);
+    
+
         this.view.slider.catalogView.productListView.update(this.model.request(''));
     }
 

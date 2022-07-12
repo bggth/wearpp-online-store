@@ -1,0 +1,19 @@
+.nouislider__view {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+}
+
+.nouislider__values {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.nouislider {
+    min-width: 100%;
+    background-color: red;
+    margin: 5px;
+}

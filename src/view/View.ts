@@ -21,6 +21,8 @@ class View {
     }
 
     init() {
+        this.slider.catalogView.filterView.noUISlider.init();
+        this.slider.catalogView.filterView.noUISlider.setController(this.controller);
     }
 
     setController(controller: Controller) {

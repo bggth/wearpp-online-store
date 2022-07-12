@@ -9,5 +9,7 @@
 }
 
 .cartview__item {
-
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }

@@ -25,6 +25,9 @@ class Model {
     }
 
     request(req: string): string {
+
+        req.split('&')
+
         let resp: string;
         if (req=='1')
             this.db.sort((a, b) => {return Number(a.price - b.price)});
@@ -33,6 +36,17 @@ class Model {
         resp = JSON.stringify(this.db);
 
         return resp;
+    }
+
+    findProductById(id: number): string {
+        for (let i: number = 0; i < this.db.length; i++) {
+            if (id == this.db[i].id) {
+                console.log(id);
+                return JSON.stringify(this.db[i]);
+            }
+        }
+
+        return null;
     }
 
 }

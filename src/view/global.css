@@ -57,7 +57,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 10;
 }
 
 .header__menu {
@@ -115,7 +115,7 @@ body {
     position: fixed;
     top: 70px;
     width: 100%;
-    z-index: 1;
+    z-index: 10;
     padding-left: 20px;
     background-color: #080708;
     color: #E6E8E6;

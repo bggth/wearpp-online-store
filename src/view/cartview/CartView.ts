@@ -21,13 +21,36 @@ class CartView {
     }
 
     update() {
+
+        let innerHTML: string = ''
+
         if (this.element == null) {
             this.element = document.querySelector('.cartview');
         }
+
+        for (let i: number = 0; i < this.cart.length; i++) {
+            innerHTML += `<div class="cartview__item">
+                <div>${this.cart[i].product.id} </div>
+                <div>${this.cart[i].product.title} </div>
+                <div>${this.cart[i].product.releaseDate} </div>
+                <div>${this.cart[i].product.description} </div>
+                <div>${this.cart[i].product.price} </div>
+
+            
+            </div>`
+        }
+        this.element.innerHTML = `<div class="cartview">${innerHTML}</div>`;
     }
 
     addProduct(product: Product, count: number) {
-        this.update()
+
+        let position: CartPosition = new CartPosition();
+        position.count = count;
+        position.product = product
+
+        this.cart.push(position);
+
+        this.update();
     }
 
     removeProduct(product: Product) {
@@ -37,7 +60,7 @@ class CartView {
 
 }
 
-interface CartPosition {
+class CartPosition {
     product: Product;
     count: number;
 }
