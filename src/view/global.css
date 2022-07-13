@@ -99,8 +99,20 @@ body {
 }
 
 .footer {
+    font-family: 'Roboto', sans-serif;
     background-color: #080708;
     color: #E6E8E6;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    padding: 20px;
+}
+
+.footer__rsslogo {
+    min-height: 40px;
+    background-color: #fff;
+    padding: 5px;
 }
 
 

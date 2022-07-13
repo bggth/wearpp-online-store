@@ -23,10 +23,12 @@ class View {
     init() {
         this.slider.catalogView.filterView.noUISlider.init();
         this.slider.catalogView.filterView.noUISlider.setController(this.controller);
+        this.slider.catalogView.filterView.init();
     }
 
     setController(controller: Controller) {
         this.controller = controller;
+        this.slider.catalogView.filterView.setController(controller);
     }
 
     render() {

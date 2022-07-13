@@ -17,32 +17,34 @@ class Controller {
                     let id: string = e.target.classList[i];
                     let ids: string[] = id?.split('-');
                     if (ids?.length===2)
-                        console.log(ids);
-                        if (ids[0]==='tab'){
-                            this.view.slider.catalogView.productListView.update(this.model.request(''));
-                            this.view.setView(Number(ids[1]));
-                            this.view.slider.catalogView.colapse(ids[1] != '1');
-
-                            return;
-                        } else {
-                            if ((ids[0]==='button') && (ids[1]==='search')) {
-                                console.log('search')                                
-                            } else if ((ids[0]==='button') && (ids[1]==='price')) {
-                                this.view.slider.catalogView.filterView.switch(1);
-                                this.view.slider.catalogView.productListView.update(this.model.request('1'));
-                            } else if (ids[0]==='button') {
-                                this.view.slider.catalogView.filterView.switch(2);
-                                this.view.slider.catalogView.productListView.update(this.model.request('2'));
-                            } else if (ids[0]==='add') {
-                                let product: Product = JSON.parse(this.model.findProductById(Number(ids[1])));
-                                console.log(product);
-                                if (product != null)
-                                    this.view.slider.cartView.addProduct(product, 1);
-                            }
-                        }
-                            
+                        this.on(ids[0], ids[1]);
                 }
             });
+        }
+    }
+
+    on(arg1: string, arg2: string) {
+        switch(arg1) {
+            case 'tab':
+                this.view.setView(Number(arg2));
+                break;
+
+            case 'add':
+                let product: Product = JSON.parse(this.model.findProductById(Number(arg2)));
+                if (product != null) {
+                    this.view.slider.cartView.addProduct(product, 1);
+                }
+                break;
+            
+            case 'update':
+                let from: number = this.view.slider.catalogView.filterView.noUISlider.from;
+                let to: number = this.view.slider.catalogView.filterView.noUISlider.to;
+                let search: string = this.view.slider.catalogView.filterView.searchFilter;
+                let sort: number = this.view.slider.catalogView.filterView.sortMode;
+                let req: string = `from=${from}&to=${to}&search=${search}&sort=${sort}`;
+                console.log(req);
+                this.view.slider.catalogView.productListView.update(this.model.request(req));
+                break;
         }
     }
 
@@ -60,43 +62,12 @@ class Controller {
         this.view.init();
         this.view.setView(1);
 
-        let product: Product = JSON.parse(this.model.findProductById(Number(1)));
-        console.log(product);
-        if (product != null)
-            this.view.slider.cartView.addProduct(product, 1);
-        product = JSON.parse(this.model.findProductById(Number(22)));
-        console.log(product);
-        if (product != null)
-        this.view.slider.cartView.addProduct(product, 1);
-        product = JSON.parse(this.model.findProductById(Number(33)));
-        console.log(product);
-        if (product != null)
-            this.view.slider.cartView.addProduct(product, 1);
-        product = JSON.parse(this.model.findProductById(Number(14)));
-        console.log(product);
-        if (product != null)
-            this.view.slider.cartView.addProduct(product, 1);
-    
+        this.on('add', '1');
+        this.on('add', '12');
+        this.on('add', '33');
+        this.on('add', '4');
 
-        this.view.slider.catalogView.productListView.update(this.model.request(''));
     }
-
-    interceptClickEvent(e: any) {
-
-
-       /* let href;
-        let target = e.target || e.srcElement;
-        if (target.tagName === 'A') {
-            href = target.getAttribute('href');
-            console.log(href);
-            if (true) {
-                e.preventDefault();
-            }
-        }
-        */
-    }
-
-
 
 }
 

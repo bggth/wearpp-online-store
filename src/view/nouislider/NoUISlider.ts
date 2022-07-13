@@ -33,18 +33,21 @@ class NoUISlider {
                     'max': [this.max]
                 },
                 step: 1000,
+                connect: true,
             });
 
             this.element.noUiSlider.on('update', (values: any) => {
                 this.fromElement.innerHTML = String(Number(values[0]));
                 this.toElement.innerHTML = String(Number(values[1]));
-                console.log(values);
+                this.from = Number(values[0]);
+                this.to = Number(values[1]);
+                this.controller.on('update', '');
             });
         }
     }
 
     setController(controller: Controller) {
-        
+        this.controller =controller;
     }
 
     getValues(): Number[] {

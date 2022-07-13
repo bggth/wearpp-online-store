@@ -1,3 +1,4 @@
+import { Footer } from '../Footer';
 import './catalogview.css'
 
 import {FilterView} from './FilterView';
@@ -7,10 +8,11 @@ class CatalogView {
     filterView: FilterView;
     productListView: ProductListView;
     element: HTMLElement;
+    footer: Footer;
     constructor() {
         this.filterView = new FilterView();
         this.productListView = new ProductListView();
-
+        this.footer = new Footer();
     }
 
 
@@ -19,9 +21,12 @@ class CatalogView {
         innerHTML += this.filterView.render();
         innerHTML += this.productListView.render();
         return `
-        <div class="catalogview">
-            ${innerHTML}
-        </div>
+            <div class="catalogview">
+            <div class="catalogview__columns">
+                ${innerHTML}
+            </div>
+            ${this.footer.render()}
+            </div>
         `
     }
 
