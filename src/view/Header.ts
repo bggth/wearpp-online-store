@@ -14,7 +14,7 @@ class Header {
 
         return `
             <header class="header">
-            <img class="header__logo" src="/assets/wearpp-logo.svg" alt="header__logo"></img>
+            <img class="header__logo" src="./assets/wearpp-logo.svg" alt="header__logo"></img>
             <div class="header__menu">
             <span class="header__menu-item underline noselect tab-0">Home</span>
             <span class="header__menu-item underline noselect tab-1">Catalog</span>
