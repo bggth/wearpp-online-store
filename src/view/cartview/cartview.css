@@ -13,3 +13,17 @@
     flex-direction: row;
     gap: 10px;
 }
+
+.cart__counter {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    background-color: #DF2935;
+    color: #E6E8E6;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -15px;
+}

@@ -4,6 +4,7 @@ import './cartview.css';
 class CartView {
     cart: CartPosition[] = [];
     element: HTMLElement;
+    counterElement: HTMLElement;
     constructor() {
 
     }
@@ -26,6 +27,7 @@ class CartView {
 
         if (this.element == null) {
             this.element = document.querySelector('.cartview');
+            this.counterElement = document.querySelector(".cart__counter");
         }
 
         for (let i: number = 0; i < this.cart.length; i++) {
@@ -40,6 +42,7 @@ class CartView {
             </div>`
         }
         this.element.innerHTML = `<div class="cartview">${innerHTML}</div>`;
+        this.counterElement.innerHTML = `${this.cart.length}`;
     }
 
     addProduct(product: Product, count: number) {

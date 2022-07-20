@@ -18,7 +18,8 @@ class Header {
             <div class="header__menu">
             <span class="header__menu-item underline noselect tab-0">Home</span>
             <span class="header__menu-item underline noselect tab-1">Catalog</span>
-            <span class="header__menu-item underline noselect tab-2">Cart</span>
+            <span class="header__menu-item underline noselect tab-2">Cart</span><span class="cart__counter"></span>
+
             </div>
 
             </header>
