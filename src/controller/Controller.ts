@@ -60,12 +60,7 @@ class Controller {
     navigate(url: string) {
         this.view.render();
         this.view.init();
-        this.view.setView(1);
-
-        this.on('add', '1');
-        this.on('add', '12');
-        this.on('add', '33');
-        this.on('add', '4');
+        this.view.setView(0);
 
     }
 
