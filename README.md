@@ -1,6 +1,1 @@
-https://coolors.co/080708-3772ff-df2935-fdca40-e6e8e6
-080708
-3772FF
-DF2935
-FDCA40
-E6E8E6
+https://bggth.github.io/wearpp-online-store/index.html
